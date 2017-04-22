@@ -1,0 +1,4159 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://www.github.com/ramda/ramda-fantasy">ramda-fantasy (v0.8.0)</a>
+</h1>
+<h4>Fantasy Land compatible types for easy integration with Ramda</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy">module ramda-fantasy</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Either">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>Either
+            <span class="apidocSignatureSpan">(left, right)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>Future
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.IO">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>IO
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Identity">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>Identity
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Maybe">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>Maybe
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Reader">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>Reader
+            <span class="apidocSignatureSpan">(run)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>State
+            <span class="apidocSignatureSpan">(run)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Tuple">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>Tuple
+            <span class="apidocSignatureSpan">(x, y)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.lift2">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>lift2
+            <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.lift3">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>lift3
+            <span class="apidocSignatureSpan">(a0, a1, a2, a3)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ramda-fantasy.</span>Either.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ramda-fantasy.</span>Future.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ramda-fantasy.</span>IO.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ramda-fantasy.</span>Identity.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ramda-fantasy.</span>Maybe.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ramda-fantasy.</span>Reader.ask</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ramda-fantasy.</span>Reader.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ramda-fantasy.</span>State.get</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ramda-fantasy.</span>State.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ramda-fantasy.</span>index</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ramda-fantasy.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.Either">module ramda-fantasy.Either</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Either.Either">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>Either
+            <span class="apidocSignatureSpan">(left, right)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Either.Left">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Either.</span>Left
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Either.Right">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Either.</span>Right
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Either.chainRec">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Either.</span>chainRec
+            <span class="apidocSignatureSpan">(f, i)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Either.either">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Either.</span>either
+            <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Either.isLeft">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Either.</span>isLeft
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Either.isRight">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Either.</span>isRight
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Either.of">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Either.</span>of
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.Either.prototype">module ramda-fantasy.Either.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Either.prototype.chain">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Either.prototype.</span>chain
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Either.prototype.chainRec">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Either.prototype.</span>chainRec
+            <span class="apidocSignatureSpan">(f, i)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Either.prototype.either">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Either.prototype.</span>either
+            <span class="apidocSignatureSpan">(leftFn, rightFn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Either.prototype.map">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Either.prototype.</span>map
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Either.prototype.of">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Either.prototype.</span>of
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.Future">module ramda-fantasy.Future</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future.Future">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>Future
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future.cache">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Future.</span>cache
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future.chainRec">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Future.</span>chainRec
+            <span class="apidocSignatureSpan">(f, a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future.of">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Future.</span>of
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future.reject">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Future.</span>reject
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.Future.prototype">module ramda-fantasy.Future.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future.prototype.ap">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>ap
+            <span class="apidocSignatureSpan">(m)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future.prototype.bimap">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>bimap
+            <span class="apidocSignatureSpan">(errFn, successFn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future.prototype.chain">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>chain
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future.prototype.chainRec">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>chainRec
+            <span class="apidocSignatureSpan">(f, a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future.prototype.chainReject">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>chainReject
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future.prototype.fork">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>fork
+            <span class="apidocSignatureSpan">(reject, resolve)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future.prototype.map">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>map
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future.prototype.of">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>of
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Future.prototype.toString">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.IO">module ramda-fantasy.IO</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.IO.IO">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>IO
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.IO.chainRec">
+            function <span class="apidocSignatureSpan">ramda-fantasy.IO.</span>chainRec
+            <span class="apidocSignatureSpan">(f, i)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.IO.of">
+            function <span class="apidocSignatureSpan">ramda-fantasy.IO.</span>of
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.IO.runIO">
+            function <span class="apidocSignatureSpan">ramda-fantasy.IO.</span>runIO
+            <span class="apidocSignatureSpan">(io)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.IO.prototype">module ramda-fantasy.IO.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.IO.prototype.ap">
+            function <span class="apidocSignatureSpan">ramda-fantasy.IO.prototype.</span>ap
+            <span class="apidocSignatureSpan">(thatIo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.IO.prototype.chain">
+            function <span class="apidocSignatureSpan">ramda-fantasy.IO.prototype.</span>chain
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.IO.prototype.chainRec">
+            function <span class="apidocSignatureSpan">ramda-fantasy.IO.prototype.</span>chainRec
+            <span class="apidocSignatureSpan">(f, i)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.IO.prototype.map">
+            function <span class="apidocSignatureSpan">ramda-fantasy.IO.prototype.</span>map
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.IO.prototype.of">
+            function <span class="apidocSignatureSpan">ramda-fantasy.IO.prototype.</span>of
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.IO.prototype.runIO">
+            function <span class="apidocSignatureSpan">ramda-fantasy.IO.prototype.</span>runIO
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.IO.prototype.toString">
+            function <span class="apidocSignatureSpan">ramda-fantasy.IO.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.Identity">module ramda-fantasy.Identity</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Identity.Identity">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>Identity
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Identity.chainRec">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Identity.</span>chainRec
+            <span class="apidocSignatureSpan">(f, i)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Identity.of">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Identity.</span>of
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.Identity.prototype">module ramda-fantasy.Identity.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Identity.prototype.ap">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>ap
+            <span class="apidocSignatureSpan">(app)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Identity.prototype.chain">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>chain
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Identity.prototype.chainRec">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>chainRec
+            <span class="apidocSignatureSpan">(f, i)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Identity.prototype.equals">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>equals
+            <span class="apidocSignatureSpan">(that)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Identity.prototype.get">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>get
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Identity.prototype.map">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>map
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Identity.prototype.of">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>of
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Identity.prototype.toString">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.Maybe">module ramda-fantasy.Maybe</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Maybe.Maybe">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>Maybe
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Maybe.Just">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>Just
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Maybe.Nothing">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>Nothing
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Maybe.chainRec">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>chainRec
+            <span class="apidocSignatureSpan">(f, i)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Maybe.isJust">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>isJust
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Maybe.isNothing">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>isNothing
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Maybe.maybe">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>maybe
+            <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Maybe.of">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>of
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Maybe.toMaybe">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>toMaybe
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.Maybe.prototype">module ramda-fantasy.Maybe.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Maybe.prototype.chainRec">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.prototype.</span>chainRec
+            <span class="apidocSignatureSpan">(f, i)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Maybe.prototype.isJust">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.prototype.</span>isJust
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Maybe.prototype.isNothing">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.prototype.</span>isNothing
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Maybe.prototype.of">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.prototype.</span>of
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.Reader">module ramda-fantasy.Reader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Reader.Reader">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>Reader
+            <span class="apidocSignatureSpan">(run)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Reader.T">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Reader.</span>T
+            <span class="apidocSignatureSpan">(M)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Reader.of">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Reader.</span>of
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Reader.run">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Reader.</span>run
+            <span class="apidocSignatureSpan">(reader)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ramda-fantasy.Reader.</span>ask</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.Reader.ask">module ramda-fantasy.Reader.ask</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Reader.ask.run">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Reader.ask.</span>run
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.Reader.prototype">module ramda-fantasy.Reader.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Reader.prototype.ap">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Reader.prototype.</span>ap
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Reader.prototype.chain">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Reader.prototype.</span>chain
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Reader.prototype.map">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Reader.prototype.</span>map
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Reader.prototype.of">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Reader.prototype.</span>of
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Reader.prototype.toString">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Reader.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.State">module ramda-fantasy.State</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.State">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>State
+            <span class="apidocSignatureSpan">(run)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.T">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.</span>T
+            <span class="apidocSignatureSpan">(M)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.gets">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.</span>gets
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.lift">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.</span>lift
+            <span class="apidocSignatureSpan">(ma)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.modify">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.</span>modify
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.of">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.</span>of
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.put">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.</span>put
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.tailRec">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.</span>tailRec
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ramda-fantasy.State.</span>get</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.State.get">module ramda-fantasy.State.get</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.get._run">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.get.</span>_run
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.State.prototype">module ramda-fantasy.State.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.prototype.ap">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.prototype.</span>ap
+            <span class="apidocSignatureSpan">(fa)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.prototype.chain">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.prototype.</span>chain
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.prototype.eval">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.prototype.</span>eval
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.prototype.exec">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.prototype.</span>exec
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.prototype.map">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.prototype.</span>map
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.prototype.of">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.prototype.</span>of
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.State.prototype.run">
+            function <span class="apidocSignatureSpan">ramda-fantasy.State.prototype.</span>run
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.Tuple">module ramda-fantasy.Tuple</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Tuple.Tuple">
+            function <span class="apidocSignatureSpan">ramda-fantasy.</span>Tuple
+            <span class="apidocSignatureSpan">(x, y)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Tuple.fst">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Tuple.</span>fst
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.Tuple.snd">
+            function <span class="apidocSignatureSpan">ramda-fantasy.Tuple.</span>snd
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.index">module ramda-fantasy.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.index.Either">
+            function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>Either
+            <span class="apidocSignatureSpan">(left, right)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.index.Future">
+            function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>Future
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.index.IO">
+            function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>IO
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.index.Identity">
+            function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>Identity
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.index.Maybe">
+            function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>Maybe
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.index.Reader">
+            function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>Reader
+            <span class="apidocSignatureSpan">(run)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.index.State">
+            function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>State
+            <span class="apidocSignatureSpan">(run)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.index.Tuple">
+            function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>Tuple
+            <span class="apidocSignatureSpan">(x, y)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.index.lift2">
+            function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>lift2
+            <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.index.lift3">
+            function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>lift3
+            <span class="apidocSignatureSpan">(a0, a1, a2, a3)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ramda-fantasy.util">module ramda-fantasy.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.util.baseMap">
+            function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>baseMap
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.util.chainRecDone">
+            function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>chainRecDone
+            <span class="apidocSignatureSpan">(v)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.util.chainRecNext">
+            function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>chainRecNext
+            <span class="apidocSignatureSpan">(v)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.util.deriveAp">
+            function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>deriveAp
+            <span class="apidocSignatureSpan">(Type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.util.deriveMap">
+            function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>deriveMap
+            <span class="apidocSignatureSpan">(Type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.util.extend">
+            function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>extend
+            <span class="apidocSignatureSpan">(Child, Parent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.util.getEquals">
+            function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>getEquals
+            <span class="apidocSignatureSpan">(constructor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.util.identity">
+            function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>identity
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.util.notCallable">
+            function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>notCallable
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.util.notImplemented">
+            function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>notImplemented
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ramda-fantasy.util.returnThis">
+            function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>returnThis
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy" id="apidoc.module.ramda-fantasy">module ramda-fantasy</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Either" id="apidoc.element.ramda-fantasy.Either">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>Either
+        <span class="apidocSignatureSpan">(left, right)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Either(left, right) {
+  switch (arguments.length) {
+    case 0:
+      throw new TypeError('no arguments to Either');
+    case 1:
+      return function(right) {
+        return right == null ? Either.Left(left) : Either.Right(right);
+      };
+    default:
+      return right == null ? Either.Left(left) : Either.Right(right);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future" id="apidoc.element.ramda-fantasy.Future">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>Future
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Future(f) {
+  if (!(this instanceof Future)) {
+    return new Future(f);
+  }
+  this._fork = f;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.IO" id="apidoc.element.ramda-fantasy.IO">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>IO
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IO(fn) {
+  if (!(this instanceof IO)) {
+    return new IO(fn);
+  }
+  this.fn = fn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Identity" id="apidoc.element.ramda-fantasy.Identity">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>Identity
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Identity(x) {
+  if (!(this instanceof Identity)) {
+    return new Identity(x);
+  }
+  this.value = x;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Maybe" id="apidoc.element.ramda-fantasy.Maybe">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>Maybe
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Maybe(x) {
+  return x == null ? _nothing : Maybe.Just(x);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Reader" id="apidoc.element.ramda-fantasy.Reader">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>Reader
+        <span class="apidocSignatureSpan">(run)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Reader(run) {
+  if (!(this instanceof Reader)) {
+    return new Reader(run);
+  }
+  this.run = run;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State" id="apidoc.element.ramda-fantasy.State">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>State
+        <span class="apidocSignatureSpan">(run)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StateT(run) {
+  if (!(this instanceof StateT)) {
+    return new StateT(run);
+  }
+  this._run = run;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Tuple" id="apidoc.element.ramda-fantasy.Tuple">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>Tuple
+        <span class="apidocSignatureSpan">(x, y)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Tuple(x, y) {
+  switch (arguments.length) {
+    case 0:
+      throw new TypeError('no arguments to Tuple');
+    case 1:
+      return function(y) {
+        return new _Tuple(x, y);
+      };
+    default:
+      return new _Tuple(x, y);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.lift2" id="apidoc.element.ramda-fantasy.lift2">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>lift2
+        <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lift2 = function (a0, a1, a2) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.lift3" id="apidoc.element.ramda-fantasy.lift3">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>lift3
+        <span class="apidocSignatureSpan">(a0, a1, a2, a3)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lift3 = function (a0, a1, a2, a3) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.Either" id="apidoc.module.ramda-fantasy.Either">module ramda-fantasy.Either</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Either.Either" id="apidoc.element.ramda-fantasy.Either.Either">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>Either
+        <span class="apidocSignatureSpan">(left, right)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Either(left, right) {
+  switch (arguments.length) {
+    case 0:
+      throw new TypeError('no arguments to Either');
+    case 1:
+      return function(right) {
+        return right == null ? Either.Left(left) : Either.Right(right);
+      };
+    default:
+      return right == null ? Either.Left(left) : Either.Right(right);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Either.Left" id="apidoc.element.ramda-fantasy.Either.Left">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Either.</span>Left
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Left = function (value) {
+  return new _Left(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Either.Right" id="apidoc.element.ramda-fantasy.Either.Right">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Either.</span>Right
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Right = function (value) {
+  return new _Right(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Either.chainRec" id="apidoc.element.ramda-fantasy.Either.chainRec">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Either.</span>chainRec
+        <span class="apidocSignatureSpan">(f, i)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chainRec = function (f, i) {
+  var res, state = util.chainRecNext(i);
+  while (state.isNext) {
+    res = f(util.chainRecNext, util.chainRecDone, state.value);
+    if (Either.isLeft(res)) {
+      return res;
+    }
+    state = res.value;
+  }
+  return Either.Right(state.value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Either.either" id="apidoc.element.ramda-fantasy.Either.either">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Either.</span>either
+        <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">either = function (a0, a1, a2) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Either.isLeft" id="apidoc.element.ramda-fantasy.Either.isLeft">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Either.</span>isLeft
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isLeft = function (x) {
+  return x.isLeft;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Either.isRight" id="apidoc.element.ramda-fantasy.Either.isRight">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Either.</span>isRight
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isRight = function (x) {
+  return x.isRight;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Either.of" id="apidoc.element.ramda-fantasy.Either.of">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Either.</span>of
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (value) {
+  return Either.Right(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.<span class="apidocCodeKeywordSpan">of</span>(f(a));
+      });
+    });
+  };
+},
+
+deriveMap: function (Type) {
+  return function (f) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.Either.prototype" id="apidoc.module.ramda-fantasy.Either.prototype">module ramda-fantasy.Either.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Either.prototype.chain" id="apidoc.element.ramda-fantasy.Either.prototype.chain">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Either.prototype.</span>chain
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chain = function () { return this; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+chainRecDone: function(v) {
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.<span class="apidocCodeKeywordSpan">chain</span>(function (f) {
+      return fa.chain(function (a) {
+        return Type.of(f(a));
+      });
+    });
+  };
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Either.prototype.chainRec" id="apidoc.element.ramda-fantasy.Either.prototype.chainRec">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Either.prototype.</span>chainRec
+        <span class="apidocSignatureSpan">(f, i)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chainRec = function (f, i) {
+  var res, state = util.chainRecNext(i);
+  while (state.isNext) {
+    res = f(util.chainRecNext, util.chainRecDone, state.value);
+    if (Either.isLeft(res)) {
+      return res;
+    }
+    state = res.value;
+  }
+  return Either.Right(state.value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Either.prototype.either" id="apidoc.element.ramda-fantasy.Either.prototype.either">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Either.prototype.</span>either
+        <span class="apidocSignatureSpan">(leftFn, rightFn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function instanceEither(leftFn, rightFn) {
+  return this.isLeft ? leftFn(this.value) : rightFn(this.value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Either.prototype.map" id="apidoc.element.ramda-fantasy.Either.prototype.map">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Either.prototype.</span>map
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function () { return this; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var curryN = require('ramda/src/curryN');
+
+module.exports = curryN(3, function lift2(f, a1, a2) {
+  return a1.<span class="apidocCodeKeywordSpan">map</span>(f).ap(a2);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Either.prototype.of" id="apidoc.element.ramda-fantasy.Either.prototype.of">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Either.prototype.</span>of
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (value) {
+  return Either.Right(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.<span class="apidocCodeKeywordSpan">of</span>(f(a));
+      });
+    });
+  };
+},
+
+deriveMap: function (Type) {
+  return function (f) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.Future" id="apidoc.module.ramda-fantasy.Future">module ramda-fantasy.Future</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future.Future" id="apidoc.element.ramda-fantasy.Future.Future">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>Future
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Future(f) {
+  if (!(this instanceof Future)) {
+    return new Future(f);
+  }
+  this._fork = f;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future.cache" id="apidoc.element.ramda-fantasy.Future.cache">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Future.</span>cache
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cache = function (f) {
+  var status = 'IDLE';
+  var listeners = [];
+  var cachedValue;
+
+  var handleCompletion = curry(function(newStatus, cb, val) {
+    status = newStatus;
+    cachedValue = val;
+    cb(val);
+    forEach(function(listener) {
+      listener[status](cachedValue);
+    }, listeners);
+  });
+
+  function addListeners(reject, resolve) {
+    listeners.push({ REJECTED: reject, RESOLVED: resolve } );
+  }
+
+  function doResolve(reject, resolve) {
+    status = 'PENDING';
+    return f._fork(
+      handleCompletion('REJECTED', reject),
+      handleCompletion('RESOLVED', resolve)
+    );
+  }
+
+  return new Future(function(reject, resolve) {
+
+    switch(status) {
+      case 'IDLE': doResolve(reject, resolve); break;
+      case 'PENDING': addListeners(reject, resolve); break;
+      case 'REJECTED': reject(cachedValue); break;
+      case 'RESOLVED': resolve(cachedValue); break;
+    }
+
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future.chainRec" id="apidoc.element.ramda-fantasy.Future.chainRec">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Future.</span>chainRec
+        <span class="apidocSignatureSpan">(f, a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chainRec = function (f, a) {
+  return Future(function(reject, resolve) {
+    return function go(acc) {
+      // isSync could be in three possable states
+      // * null - unresolved status
+      // * true - synchronous future
+      // * false - asynchronous future
+      var isSync = null;
+      var state = util.chainRecNext(acc);
+      var onResolve = function(v) {
+        // If the `isSync` is still unresolved, we have observed a
+        // synchronous future. Otherwise, `isSync` will be `false`.
+        if (isSync === null) {
+          isSync = true;
+          // Store the result for further synchronous processing.
+          state = v;
+        } else {
+          // When we have observed an asynchronous future, we use normal
+          // recursion. This is safe because we will be on a new stack.
+          (v.isNext ? go : resolve)(v.value);
+        }
+      };
+      while (state.isNext) {
+        isSync = null;
+        f(util.chainRecNext, util.chainRecDone, state.value).fork(reject, onResolve);
+        // If the `isSync` has already resolved to `true` by our `onResolve`, then
+        // we have observed a synchronous future. Otherwise it will still be `null`.
+        if (isSync === true) {
+          continue;
+        } else {
+          // If the status has not resolved yet, then we have observed an
+          // asynchronous or failed future so update status and exit the loop.
+          isSync = false;
+          return;
+        }
+      }
+      resolve(state.value);
+    }(a);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future.of" id="apidoc.element.ramda-fantasy.Future.of">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Future.</span>of
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (x) {
+  // should include a default rejection?
+  return new Future(function(_, resolve) { return resolve(x); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.<span class="apidocCodeKeywordSpan">of</span>(f(a));
+      });
+    });
+  };
+},
+
+deriveMap: function (Type) {
+  return function (f) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future.reject" id="apidoc.element.ramda-fantasy.Future.reject">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Future.</span>reject
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reject = function (val) {
+  return new Future(function(reject) {
+    reject(val);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.Future.prototype" id="apidoc.module.ramda-fantasy.Future.prototype">module ramda-fantasy.Future.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future.prototype.ap" id="apidoc.element.ramda-fantasy.Future.prototype.ap">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>ap
+        <span class="apidocSignatureSpan">(m)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ap = function (m) {
+  var self = this;
+
+  return new Future(function(rej, res) {
+    var applyFn, val;
+    var doReject = once(rej);
+
+    var resolveIfDone = jail(doReject, function() {
+      if (applyFn != null &amp;&amp; val != null) {
+        return res(applyFn(val));
+      }
+    });
+
+    self._fork(doReject, function(fn) {
+      applyFn = fn;
+      resolveIfDone();
+    });
+
+    m._fork(doReject, function(v) {
+      val = v;
+      resolveIfDone();
+    });
+
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var curryN = require('ramda/src/curryN');
+
+module.exports = curryN(3, function lift2(f, a1, a2) {
+  return a1.map(f).<span class="apidocCodeKeywordSpan">ap</span>(a2);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future.prototype.bimap" id="apidoc.element.ramda-fantasy.Future.prototype.bimap">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>bimap
+        <span class="apidocSignatureSpan">(errFn, successFn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bimap = function (errFn, successFn) {
+  var self = this;
+  return new Future(function(reject, resolve) {
+    self._fork(
+      jail(reject, function(err) { reject(errFn(err)); }),
+      jail(reject, function(val) { resolve(successFn(val)); })
+    );
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future.prototype.chain" id="apidoc.element.ramda-fantasy.Future.prototype.chain">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>chain
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chain = function (f) {  // Sorella's:
+  return new Future(function(reject, resolve) {
+    return this._fork(
+      function(a) { return reject(a); },
+      jail(reject, function(b) { return f(b)._fork(reject, resolve); })
+    );
+  }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+chainRecDone: function(v) {
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.<span class="apidocCodeKeywordSpan">chain</span>(function (f) {
+      return fa.chain(function (a) {
+        return Type.of(f(a));
+      });
+    });
+  };
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future.prototype.chainRec" id="apidoc.element.ramda-fantasy.Future.prototype.chainRec">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>chainRec
+        <span class="apidocSignatureSpan">(f, a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chainRec = function (f, a) {
+  return Future(function(reject, resolve) {
+    return function go(acc) {
+      // isSync could be in three possable states
+      // * null - unresolved status
+      // * true - synchronous future
+      // * false - asynchronous future
+      var isSync = null;
+      var state = util.chainRecNext(acc);
+      var onResolve = function(v) {
+        // If the `isSync` is still unresolved, we have observed a
+        // synchronous future. Otherwise, `isSync` will be `false`.
+        if (isSync === null) {
+          isSync = true;
+          // Store the result for further synchronous processing.
+          state = v;
+        } else {
+          // When we have observed an asynchronous future, we use normal
+          // recursion. This is safe because we will be on a new stack.
+          (v.isNext ? go : resolve)(v.value);
+        }
+      };
+      while (state.isNext) {
+        isSync = null;
+        f(util.chainRecNext, util.chainRecDone, state.value).fork(reject, onResolve);
+        // If the `isSync` has already resolved to `true` by our `onResolve`, then
+        // we have observed a synchronous future. Otherwise it will still be `null`.
+        if (isSync === true) {
+          continue;
+        } else {
+          // If the status has not resolved yet, then we have observed an
+          // asynchronous or failed future so update status and exit the loop.
+          isSync = false;
+          return;
+        }
+      }
+      resolve(state.value);
+    }(a);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future.prototype.chainReject" id="apidoc.element.ramda-fantasy.Future.prototype.chainReject">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>chainReject
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chainReject = function (f) {
+  return new Future(function(reject, resolve) {
+    return this._fork(
+      jail(reject, function(a) { return f(a)._fork(reject, resolve); }),
+      function(b) { return resolve(b); }
+    );
+  }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future.prototype.fork" id="apidoc.element.ramda-fantasy.Future.prototype.fork">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>fork
+        <span class="apidocSignatureSpan">(reject, resolve)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fork = function (reject, resolve) {
+  this._fork(reject, jail(reject, resolve));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future.prototype.map" id="apidoc.element.ramda-fantasy.Future.prototype.map">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>map
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (f) {
+  return this.chain(function(a) { return Future.of(f(a)); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var curryN = require('ramda/src/curryN');
+
+module.exports = curryN(3, function lift2(f, a1, a2) {
+  return a1.<span class="apidocCodeKeywordSpan">map</span>(f).ap(a2);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future.prototype.of" id="apidoc.element.ramda-fantasy.Future.prototype.of">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>of
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (x) {
+  // should include a default rejection?
+  return new Future(function(_, resolve) { return resolve(x); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.<span class="apidocCodeKeywordSpan">of</span>(f(a));
+      });
+    });
+  };
+},
+
+deriveMap: function (Type) {
+  return function (f) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Future.prototype.toString" id="apidoc.element.ramda-fantasy.Future.prototype.toString">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Future.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return 'Future(' + toString(this._fork) + ')';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.IO" id="apidoc.module.ramda-fantasy.IO">module ramda-fantasy.IO</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.IO.IO" id="apidoc.element.ramda-fantasy.IO.IO">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>IO
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IO(fn) {
+  if (!(this instanceof IO)) {
+    return new IO(fn);
+  }
+  this.fn = fn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.IO.chainRec" id="apidoc.element.ramda-fantasy.IO.chainRec">
+        function <span class="apidocSignatureSpan">ramda-fantasy.IO.</span>chainRec
+        <span class="apidocSignatureSpan">(f, i)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chainRec = function (f, i) {
+  return new IO(function() {
+    var state = util.chainRecNext(i);
+    while (state.isNext) {
+      state = f(util.chainRecNext, util.chainRecDone, state.value).fn();
+    }
+    return state.value;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.IO.of" id="apidoc.element.ramda-fantasy.IO.of">
+        function <span class="apidocSignatureSpan">ramda-fantasy.IO.</span>of
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (x) {
+  return new IO(function() { return x; });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.<span class="apidocCodeKeywordSpan">of</span>(f(a));
+      });
+    });
+  };
+},
+
+deriveMap: function (Type) {
+  return function (f) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.IO.runIO" id="apidoc.element.ramda-fantasy.IO.runIO">
+        function <span class="apidocSignatureSpan">ramda-fantasy.IO.</span>runIO
+        <span class="apidocSignatureSpan">(io)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">runIO = function (io) {
+  return io.runIO.apply(io, [].slice.call(arguments, 1));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.IO.prototype" id="apidoc.module.ramda-fantasy.IO.prototype">module ramda-fantasy.IO.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.IO.prototype.ap" id="apidoc.element.ramda-fantasy.IO.prototype.ap">
+        function <span class="apidocSignatureSpan">ramda-fantasy.IO.prototype.</span>ap
+        <span class="apidocSignatureSpan">(thatIo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ap = function (thatIo) {
+  return this.chain(function(f) {
+    return thatIo.map(f);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var curryN = require('ramda/src/curryN');
+
+module.exports = curryN(3, function lift2(f, a1, a2) {
+  return a1.map(f).<span class="apidocCodeKeywordSpan">ap</span>(a2);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.IO.prototype.chain" id="apidoc.element.ramda-fantasy.IO.prototype.chain">
+        function <span class="apidocSignatureSpan">ramda-fantasy.IO.prototype.</span>chain
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chain = function (f) {
+  var io = this;
+  return new IO(function() {
+    var next = f(io.fn.apply(io, arguments));
+    return next.fn.apply(next, arguments);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+chainRecDone: function(v) {
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.<span class="apidocCodeKeywordSpan">chain</span>(function (f) {
+      return fa.chain(function (a) {
+        return Type.of(f(a));
+      });
+    });
+  };
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.IO.prototype.chainRec" id="apidoc.element.ramda-fantasy.IO.prototype.chainRec">
+        function <span class="apidocSignatureSpan">ramda-fantasy.IO.prototype.</span>chainRec
+        <span class="apidocSignatureSpan">(f, i)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chainRec = function (f, i) {
+  return new IO(function() {
+    var state = util.chainRecNext(i);
+    while (state.isNext) {
+      state = f(util.chainRecNext, util.chainRecDone, state.value).fn();
+    }
+    return state.value;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.IO.prototype.map" id="apidoc.element.ramda-fantasy.IO.prototype.map">
+        function <span class="apidocSignatureSpan">ramda-fantasy.IO.prototype.</span>map
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (f) {
+  var io = this;
+  return new IO(compose(f, io.fn));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var curryN = require('ramda/src/curryN');
+
+module.exports = curryN(3, function lift2(f, a1, a2) {
+  return a1.<span class="apidocCodeKeywordSpan">map</span>(f).ap(a2);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.IO.prototype.of" id="apidoc.element.ramda-fantasy.IO.prototype.of">
+        function <span class="apidocSignatureSpan">ramda-fantasy.IO.prototype.</span>of
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (x) {
+  return new IO(function() { return x; });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.<span class="apidocCodeKeywordSpan">of</span>(f(a));
+      });
+    });
+  };
+},
+
+deriveMap: function (Type) {
+  return function (f) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.IO.prototype.runIO" id="apidoc.element.ramda-fantasy.IO.prototype.runIO">
+        function <span class="apidocSignatureSpan">ramda-fantasy.IO.prototype.</span>runIO
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">runIO = function () {
+  return this.fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.IO.prototype.toString" id="apidoc.element.ramda-fantasy.IO.prototype.toString">
+        function <span class="apidocSignatureSpan">ramda-fantasy.IO.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return 'IO(' + toString(this.fn) + ')';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.Identity" id="apidoc.module.ramda-fantasy.Identity">module ramda-fantasy.Identity</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Identity.Identity" id="apidoc.element.ramda-fantasy.Identity.Identity">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>Identity
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Identity(x) {
+  if (!(this instanceof Identity)) {
+    return new Identity(x);
+  }
+  this.value = x;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Identity.chainRec" id="apidoc.element.ramda-fantasy.Identity.chainRec">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Identity.</span>chainRec
+        <span class="apidocSignatureSpan">(f, i)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chainRec = function (f, i) {
+  var state = util.chainRecNext(i);
+  while (state.isNext) {
+    state = f(util.chainRecNext, util.chainRecDone, state.value).get();
+  }
+  return Identity(state.value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Identity.of" id="apidoc.element.ramda-fantasy.Identity.of">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Identity.</span>of
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (x) {
+  return new Identity(x);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.<span class="apidocCodeKeywordSpan">of</span>(f(a));
+      });
+    });
+  };
+},
+
+deriveMap: function (Type) {
+  return function (f) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.Identity.prototype" id="apidoc.module.ramda-fantasy.Identity.prototype">module ramda-fantasy.Identity.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Identity.prototype.ap" id="apidoc.element.ramda-fantasy.Identity.prototype.ap">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>ap
+        <span class="apidocSignatureSpan">(app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ap = function (app) {
+  return app.map(this.value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var curryN = require('ramda/src/curryN');
+
+module.exports = curryN(3, function lift2(f, a1, a2) {
+  return a1.map(f).<span class="apidocCodeKeywordSpan">ap</span>(a2);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Identity.prototype.chain" id="apidoc.element.ramda-fantasy.Identity.prototype.chain">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>chain
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chain = function (fn) {
+  return fn(this.value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+chainRecDone: function(v) {
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.<span class="apidocCodeKeywordSpan">chain</span>(function (f) {
+      return fa.chain(function (a) {
+        return Type.of(f(a));
+      });
+    });
+  };
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Identity.prototype.chainRec" id="apidoc.element.ramda-fantasy.Identity.prototype.chainRec">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>chainRec
+        <span class="apidocSignatureSpan">(f, i)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chainRec = function (f, i) {
+  var state = util.chainRecNext(i);
+  while (state.isNext) {
+    state = f(util.chainRecNext, util.chainRecDone, state.value).get();
+  }
+  return Identity(state.value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Identity.prototype.equals" id="apidoc.element.ramda-fantasy.Identity.prototype.equals">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>equals
+        <span class="apidocSignatureSpan">(that)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function equals(that) {
+  return that instanceof constructor &amp;&amp; _equals(this.value, that.value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Identity.prototype.get" id="apidoc.element.ramda-fantasy.Identity.prototype.get">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>get
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function () {
+  return this.value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Identity.prototype.map" id="apidoc.element.ramda-fantasy.Identity.prototype.map">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>map
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (f) {
+  return new Identity(f(this.value));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var curryN = require('ramda/src/curryN');
+
+module.exports = curryN(3, function lift2(f, a1, a2) {
+  return a1.<span class="apidocCodeKeywordSpan">map</span>(f).ap(a2);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Identity.prototype.of" id="apidoc.element.ramda-fantasy.Identity.prototype.of">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>of
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (x) {
+  return new Identity(x);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.<span class="apidocCodeKeywordSpan">of</span>(f(a));
+      });
+    });
+  };
+},
+
+deriveMap: function (Type) {
+  return function (f) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Identity.prototype.toString" id="apidoc.element.ramda-fantasy.Identity.prototype.toString">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Identity.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return 'Identity(' + toString(this.value) + ')';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.Maybe" id="apidoc.module.ramda-fantasy.Maybe">module ramda-fantasy.Maybe</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Maybe.Maybe" id="apidoc.element.ramda-fantasy.Maybe.Maybe">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>Maybe
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Maybe(x) {
+  return x == null ? _nothing : Maybe.Just(x);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Maybe.Just" id="apidoc.element.ramda-fantasy.Maybe.Just">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>Just
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Just = function (x) {
+  return new Just(x);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Maybe.Nothing" id="apidoc.element.ramda-fantasy.Maybe.Nothing">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>Nothing
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Nothing = function () {
+  return _nothing;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Maybe.chainRec" id="apidoc.element.ramda-fantasy.Maybe.chainRec">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>chainRec
+        <span class="apidocSignatureSpan">(f, i)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chainRec = function (f, i) {
+  var res, state = util.chainRecNext(i);
+  while (state.isNext) {
+    res = f(util.chainRecNext, util.chainRecDone, state.value);
+    if (Maybe.isNothing(res)) {
+      return res;
+    }
+    state = res.value;
+  }
+  return Maybe.Just(state.value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Maybe.isJust" id="apidoc.element.ramda-fantasy.Maybe.isJust">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>isJust
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isJust = function (x) {
+  return x.isJust;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Maybe.isNothing" id="apidoc.element.ramda-fantasy.Maybe.isNothing">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>isNothing
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isNothing = function (x) {
+  return x.isNothing;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Maybe.maybe" id="apidoc.element.ramda-fantasy.Maybe.maybe">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>maybe
+        <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">maybe = function (a0, a1, a2) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Maybe.of" id="apidoc.element.ramda-fantasy.Maybe.of">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>of
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (x) {
+  return new Just(x);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.<span class="apidocCodeKeywordSpan">of</span>(f(a));
+      });
+    });
+  };
+},
+
+deriveMap: function (Type) {
+  return function (f) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Maybe.toMaybe" id="apidoc.element.ramda-fantasy.Maybe.toMaybe">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.</span>toMaybe
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Maybe(x) {
+  return x == null ? _nothing : Maybe.Just(x);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.Maybe.prototype" id="apidoc.module.ramda-fantasy.Maybe.prototype">module ramda-fantasy.Maybe.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Maybe.prototype.chainRec" id="apidoc.element.ramda-fantasy.Maybe.prototype.chainRec">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.prototype.</span>chainRec
+        <span class="apidocSignatureSpan">(f, i)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chainRec = function (f, i) {
+  var res, state = util.chainRecNext(i);
+  while (state.isNext) {
+    res = f(util.chainRecNext, util.chainRecDone, state.value);
+    if (Maybe.isNothing(res)) {
+      return res;
+    }
+    state = res.value;
+  }
+  return Maybe.Just(state.value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Maybe.prototype.isJust" id="apidoc.element.ramda-fantasy.Maybe.prototype.isJust">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.prototype.</span>isJust
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isJust = function () {
+  return this instanceof Just;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Maybe.prototype.isNothing" id="apidoc.element.ramda-fantasy.Maybe.prototype.isNothing">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.prototype.</span>isNothing
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isNothing = function () {
+  return this === _nothing;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Maybe.prototype.of" id="apidoc.element.ramda-fantasy.Maybe.prototype.of">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Maybe.prototype.</span>of
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (x) {
+  return new Just(x);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.<span class="apidocCodeKeywordSpan">of</span>(f(a));
+      });
+    });
+  };
+},
+
+deriveMap: function (Type) {
+  return function (f) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.Reader" id="apidoc.module.ramda-fantasy.Reader">module ramda-fantasy.Reader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Reader.Reader" id="apidoc.element.ramda-fantasy.Reader.Reader">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>Reader
+        <span class="apidocSignatureSpan">(run)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Reader(run) {
+  if (!(this instanceof Reader)) {
+    return new Reader(run);
+  }
+  this.run = run;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Reader.T" id="apidoc.element.ramda-fantasy.Reader.T">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Reader.</span>T
+        <span class="apidocSignatureSpan">(M)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">T = function (M) {
+  var ReaderT = function ReaderT(run) {
+    if (!(this instanceof ReaderT)) {
+      return new ReaderT(run);
+    }
+    this.run = run;
+  };
+
+  ReaderT.lift = compose(ReaderT, always);
+
+  ReaderT.ask = ReaderT(M.of);
+
+  ReaderT.prototype.of = ReaderT.of = function(a) {
+    return ReaderT(function() {
+      return M.of(a);
+    });
+  };
+
+  ReaderT.prototype.chain = function(f) {
+    var readerT = this;
+    return ReaderT(function(e) {
+      var m = readerT.run(e);
+      return m.chain(function(a) {
+        return f(a).run(e);
+      });
+    });
+  };
+
+  ReaderT.prototype.map = function(f) {
+    return this.chain(function(a) {
+      return ReaderT.of(f(a));
+    });
+  };
+
+  ReaderT.prototype.ap = function(a) {
+    var readerT = this;
+    return ReaderT(function(e) {
+      return readerT.run(e).ap(a.run(e));
+    });
+  };
+
+  ReaderT.prototype.toString = function() {
+    return 'ReaderT[' + M.name + '](' + toString(this.run) + ')';
+  };
+
+  return ReaderT;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Reader.of" id="apidoc.element.ramda-fantasy.Reader.of">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Reader.</span>of
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (a) {
+  return new Reader(function() {
+    return a;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.<span class="apidocCodeKeywordSpan">of</span>(f(a));
+      });
+    });
+  };
+},
+
+deriveMap: function (Type) {
+  return function (f) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Reader.run" id="apidoc.element.ramda-fantasy.Reader.run">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Reader.</span>run
+        <span class="apidocSignatureSpan">(reader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (reader) {
+  return reader.run.apply(reader, [].slice.call(arguments, 1));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.Reader.ask" id="apidoc.module.ramda-fantasy.Reader.ask">module ramda-fantasy.Reader.ask</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Reader.ask.run" id="apidoc.element.ramda-fantasy.Reader.ask.run">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Reader.ask.</span>run
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function f1(a) {
+  if (arguments.length === 0 || _isPlaceholder(a)) {
+    return f1;
+  } else {
+    return fn.apply(this, arguments);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.Reader.prototype" id="apidoc.module.ramda-fantasy.Reader.prototype">module ramda-fantasy.Reader.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Reader.prototype.ap" id="apidoc.element.ramda-fantasy.Reader.prototype.ap">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Reader.prototype.</span>ap
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ap = function (a) {
+  return this.chain(function(f) {
+    return a.map(f);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var curryN = require('ramda/src/curryN');
+
+module.exports = curryN(3, function lift2(f, a1, a2) {
+  return a1.map(f).<span class="apidocCodeKeywordSpan">ap</span>(a2);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Reader.prototype.chain" id="apidoc.element.ramda-fantasy.Reader.prototype.chain">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Reader.prototype.</span>chain
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chain = function (f) {
+  var reader = this;
+  return new Reader(function(r) {
+    return f(reader.run(r)).run(r);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+chainRecDone: function(v) {
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.<span class="apidocCodeKeywordSpan">chain</span>(function (f) {
+      return fa.chain(function (a) {
+        return Type.of(f(a));
+      });
+    });
+  };
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Reader.prototype.map" id="apidoc.element.ramda-fantasy.Reader.prototype.map">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Reader.prototype.</span>map
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (f) {
+  return this.chain(function(a) {
+    return Reader.of(f(a));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var curryN = require('ramda/src/curryN');
+
+module.exports = curryN(3, function lift2(f, a1, a2) {
+  return a1.<span class="apidocCodeKeywordSpan">map</span>(f).ap(a2);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Reader.prototype.of" id="apidoc.element.ramda-fantasy.Reader.prototype.of">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Reader.prototype.</span>of
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (a) {
+  return new Reader(function() {
+    return a;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.<span class="apidocCodeKeywordSpan">of</span>(f(a));
+      });
+    });
+  };
+},
+
+deriveMap: function (Type) {
+  return function (f) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Reader.prototype.toString" id="apidoc.element.ramda-fantasy.Reader.prototype.toString">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Reader.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return 'Reader(' + toString(this.run) + ')';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.State" id="apidoc.module.ramda-fantasy.State">module ramda-fantasy.State</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.State" id="apidoc.element.ramda-fantasy.State.State">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>State
+        <span class="apidocSignatureSpan">(run)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StateT(run) {
+  if (!(this instanceof StateT)) {
+    return new StateT(run);
+  }
+  this._run = run;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.T" id="apidoc.element.ramda-fantasy.State.T">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.</span>T
+        <span class="apidocSignatureSpan">(M)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function T(M) {
+  function StateT(run) {
+    if (!(this instanceof StateT)) {
+      return new StateT(run);
+    }
+    this._run = run;
+  }
+  StateT.prototype.run = function(s) {
+    return this._run(s);
+  };
+  StateT.prototype.eval = function(s) {
+    return Tuple.fst(this.run(s));
+  };
+  StateT.prototype.exec = function(s) {
+    return Tuple.snd(this.run(s));
+  };
+  StateT.prototype.chain = function(f) {
+    var state = this;
+    return StateT(function(s) {
+      return state._run(s).chain(function(t) {
+        return f(Tuple.fst(t))._run(Tuple.snd(t));
+      });
+    });
+  };
+  StateT.of = StateT.prototype.of = function(a) {
+    return StateT(function (s) {
+      return M.of(Tuple(a, s));
+    });
+  };
+  StateT.prototype.ap = util.deriveAp(StateT);
+  StateT.prototype.map = util.deriveMap(StateT);
+  StateT.tailRec = curry(function(stepFn, init) {
+    return StateT(function(s) {
+      return M.tailRec(function(t) {
+        return stepFn(Tuple.fst(t))._run(Tuple.snd(t)).chain(function (t_) {
+          return M.of(Tuple.fst(t_).bimap(
+            function(a) { return Tuple(a, Tuple.snd(t_)); },
+            function(b) { return Tuple(b, Tuple.snd(t_)); }
+          ));
+        });
+      }, Tuple(init, s));
+    });
+  });
+  StateT.lift = function(ma) {
+    return StateT(function(s) {
+      return ma.chain(function(a) {
+        return M.of(Tuple(a, s));
+      });
+    });
+  };
+  StateT.get = StateT(function(s) {
+    return M.of(Tuple(s, s));
+  });
+  StateT.gets = function(f) {
+    return StateT(function(s) {
+      return M.of(Tuple(f(s), s));
+    });
+  };
+  StateT.put = function(s) {
+    return StateT(function(_) {
+      return M.of(Tuple(void _, s));
+    });
+  };
+  StateT.modify = function(f) {
+    return StateT(function(s) {
+      return M.of(Tuple(void 0, f(s)));
+    });
+  };
+
+  return StateT;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.gets" id="apidoc.element.ramda-fantasy.State.gets">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.</span>gets
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gets = function (f) {
+  return StateT(function(s) {
+    return M.of(Tuple(f(s), s));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.lift" id="apidoc.element.ramda-fantasy.State.lift">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.</span>lift
+        <span class="apidocSignatureSpan">(ma)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lift = function (ma) {
+  return StateT(function(s) {
+    return ma.chain(function(a) {
+      return M.of(Tuple(a, s));
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.modify" id="apidoc.element.ramda-fantasy.State.modify">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.</span>modify
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">modify = function (f) {
+  return StateT(function(s) {
+    return M.of(Tuple(void 0, f(s)));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.of" id="apidoc.element.ramda-fantasy.State.of">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.</span>of
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (a) {
+  return StateT(function (s) {
+    return M.of(Tuple(a, s));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.<span class="apidocCodeKeywordSpan">of</span>(f(a));
+      });
+    });
+  };
+},
+
+deriveMap: function (Type) {
+  return function (f) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.put" id="apidoc.element.ramda-fantasy.State.put">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.</span>put
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (s) {
+  return StateT(function(_) {
+    return M.of(Tuple(void _, s));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.tailRec" id="apidoc.element.ramda-fantasy.State.tailRec">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.</span>tailRec
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tailRec = function (a0, a1) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.State.get" id="apidoc.module.ramda-fantasy.State.get">module ramda-fantasy.State.get</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.get._run" id="apidoc.element.ramda-fantasy.State.get._run">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.get.</span>_run
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_run = function (s) {
+  return M.of(Tuple(s, s));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.State.prototype" id="apidoc.module.ramda-fantasy.State.prototype">module ramda-fantasy.State.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.prototype.ap" id="apidoc.element.ramda-fantasy.State.prototype.ap">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.prototype.</span>ap
+        <span class="apidocSignatureSpan">(fa)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ap = function (fa) {
+  return this.chain(function (f) {
+    return fa.chain(function (a) {
+      return Type.of(f(a));
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var curryN = require('ramda/src/curryN');
+
+module.exports = curryN(3, function lift2(f, a1, a2) {
+  return a1.map(f).<span class="apidocCodeKeywordSpan">ap</span>(a2);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.prototype.chain" id="apidoc.element.ramda-fantasy.State.prototype.chain">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.prototype.</span>chain
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chain = function (f) {
+  var state = this;
+  return StateT(function(s) {
+    return state._run(s).chain(function(t) {
+      return f(Tuple.fst(t))._run(Tuple.snd(t));
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+chainRecDone: function(v) {
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.<span class="apidocCodeKeywordSpan">chain</span>(function (f) {
+      return fa.chain(function (a) {
+        return Type.of(f(a));
+      });
+    });
+  };
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.prototype.eval" id="apidoc.element.ramda-fantasy.State.prototype.eval">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.prototype.</span>eval
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">eval = function (s) {
+  return Tuple.fst(this.run(s));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.prototype.exec" id="apidoc.element.ramda-fantasy.State.prototype.exec">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.prototype.</span>exec
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exec = function (s) {
+  return Tuple.snd(this.run(s));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.prototype.map" id="apidoc.element.ramda-fantasy.State.prototype.map">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.prototype.</span>map
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (f) {
+  return this.chain(function (a) {
+    return Type.of(f(a));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var curryN = require('ramda/src/curryN');
+
+module.exports = curryN(3, function lift2(f, a1, a2) {
+  return a1.<span class="apidocCodeKeywordSpan">map</span>(f).ap(a2);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.prototype.of" id="apidoc.element.ramda-fantasy.State.prototype.of">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.prototype.</span>of
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (a) {
+  return StateT(function (s) {
+    return M.of(Tuple(a, s));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return { isNext: false, value: v };
+},
+
+deriveAp: function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.<span class="apidocCodeKeywordSpan">of</span>(f(a));
+      });
+    });
+  };
+},
+
+deriveMap: function (Type) {
+  return function (f) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.State.prototype.run" id="apidoc.element.ramda-fantasy.State.prototype.run">
+        function <span class="apidocSignatureSpan">ramda-fantasy.State.prototype.</span>run
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (s) {
+  return this._run(s).value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.Tuple" id="apidoc.module.ramda-fantasy.Tuple">module ramda-fantasy.Tuple</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Tuple.Tuple" id="apidoc.element.ramda-fantasy.Tuple.Tuple">
+        function <span class="apidocSignatureSpan">ramda-fantasy.</span>Tuple
+        <span class="apidocSignatureSpan">(x, y)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Tuple(x, y) {
+  switch (arguments.length) {
+    case 0:
+      throw new TypeError('no arguments to Tuple');
+    case 1:
+      return function(y) {
+        return new _Tuple(x, y);
+      };
+    default:
+      return new _Tuple(x, y);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Tuple.fst" id="apidoc.element.ramda-fantasy.Tuple.fst">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Tuple.</span>fst
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fst = function (x) {
+  return x[0];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.Tuple.snd" id="apidoc.element.ramda-fantasy.Tuple.snd">
+        function <span class="apidocSignatureSpan">ramda-fantasy.Tuple.</span>snd
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">snd = function (x) {
+  return x[1];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.index" id="apidoc.module.ramda-fantasy.index">module ramda-fantasy.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.index.Either" id="apidoc.element.ramda-fantasy.index.Either">
+        function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>Either
+        <span class="apidocSignatureSpan">(left, right)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Either(left, right) {
+  switch (arguments.length) {
+    case 0:
+      throw new TypeError('no arguments to Either');
+    case 1:
+      return function(right) {
+        return right == null ? Either.Left(left) : Either.Right(right);
+      };
+    default:
+      return right == null ? Either.Left(left) : Either.Right(right);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.index.Future" id="apidoc.element.ramda-fantasy.index.Future">
+        function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>Future
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Future(f) {
+  if (!(this instanceof Future)) {
+    return new Future(f);
+  }
+  this._fork = f;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.index.IO" id="apidoc.element.ramda-fantasy.index.IO">
+        function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>IO
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IO(fn) {
+  if (!(this instanceof IO)) {
+    return new IO(fn);
+  }
+  this.fn = fn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.index.Identity" id="apidoc.element.ramda-fantasy.index.Identity">
+        function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>Identity
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Identity(x) {
+  if (!(this instanceof Identity)) {
+    return new Identity(x);
+  }
+  this.value = x;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.index.Maybe" id="apidoc.element.ramda-fantasy.index.Maybe">
+        function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>Maybe
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Maybe(x) {
+  return x == null ? _nothing : Maybe.Just(x);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.index.Reader" id="apidoc.element.ramda-fantasy.index.Reader">
+        function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>Reader
+        <span class="apidocSignatureSpan">(run)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Reader(run) {
+  if (!(this instanceof Reader)) {
+    return new Reader(run);
+  }
+  this.run = run;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.index.State" id="apidoc.element.ramda-fantasy.index.State">
+        function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>State
+        <span class="apidocSignatureSpan">(run)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StateT(run) {
+  if (!(this instanceof StateT)) {
+    return new StateT(run);
+  }
+  this._run = run;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.index.Tuple" id="apidoc.element.ramda-fantasy.index.Tuple">
+        function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>Tuple
+        <span class="apidocSignatureSpan">(x, y)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Tuple(x, y) {
+  switch (arguments.length) {
+    case 0:
+      throw new TypeError('no arguments to Tuple');
+    case 1:
+      return function(y) {
+        return new _Tuple(x, y);
+      };
+    default:
+      return new _Tuple(x, y);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.index.lift2" id="apidoc.element.ramda-fantasy.index.lift2">
+        function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>lift2
+        <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lift2 = function (a0, a1, a2) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.index.lift3" id="apidoc.element.ramda-fantasy.index.lift3">
+        function <span class="apidocSignatureSpan">ramda-fantasy.index.</span>lift3
+        <span class="apidocSignatureSpan">(a0, a1, a2, a3)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lift3 = function (a0, a1, a2, a3) { return fn.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ramda-fantasy.util" id="apidoc.module.ramda-fantasy.util">module ramda-fantasy.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.util.baseMap" id="apidoc.element.ramda-fantasy.util.baseMap">
+        function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>baseMap
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">baseMap = function (f) {
+  return f(this.value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.util.chainRecDone" id="apidoc.element.ramda-fantasy.util.chainRecDone">
+        function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>chainRecDone
+        <span class="apidocSignatureSpan">(v)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chainRecDone = function (v) {
+  return { isNext: false, value: v };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.util.chainRecNext" id="apidoc.element.ramda-fantasy.util.chainRecNext">
+        function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>chainRecNext
+        <span class="apidocSignatureSpan">(v)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chainRecNext = function (v) {
+  return { isNext: true, value: v };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.util.deriveAp" id="apidoc.element.ramda-fantasy.util.deriveAp">
+        function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>deriveAp
+        <span class="apidocSignatureSpan">(Type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deriveAp = function (Type) {
+  return function(fa) {
+    return this.chain(function (f) {
+      return fa.chain(function (a) {
+        return Type.of(f(a));
+      });
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.util.deriveMap" id="apidoc.element.ramda-fantasy.util.deriveMap">
+        function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>deriveMap
+        <span class="apidocSignatureSpan">(Type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deriveMap = function (Type) {
+  return function (f) {
+    return this.chain(function (a) {
+      return Type.of(f(a));
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.util.extend" id="apidoc.element.ramda-fantasy.util.extend">
+        function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>extend
+        <span class="apidocSignatureSpan">(Child, Parent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (Child, Parent) {
+  function Ctor() {
+    this.constructor = Child;
+  }
+  Ctor.prototype = Parent.prototype;
+  Child.prototype = new Ctor();
+  Child.super_ = Parent.prototype;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.util.getEquals" id="apidoc.element.ramda-fantasy.util.getEquals">
+        function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>getEquals
+        <span class="apidocSignatureSpan">(constructor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getEquals = function (constructor) {
+  return function equals(that) {
+    return that instanceof constructor &amp;&amp; _equals(this.value, that.value);
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.util.identity" id="apidoc.element.ramda-fantasy.util.identity">
+        function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>identity
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">identity = function (x) { return x; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.util.notCallable" id="apidoc.element.ramda-fantasy.util.notCallable">
+        function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>notCallable
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notCallable = function (fn) {
+  return function() {
+    throw new Error(fn + ' cannot be called directly');
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.util.notImplemented" id="apidoc.element.ramda-fantasy.util.notImplemented">
+        function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>notImplemented
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notImplemented = function (str) {
+  return function() {
+    throw new Error(str + ' is not implemented');
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ramda-fantasy.util.returnThis" id="apidoc.element.ramda-fantasy.util.returnThis">
+        function <span class="apidocSignatureSpan">ramda-fantasy.util.</span>returnThis
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">returnThis = function () { return this; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
